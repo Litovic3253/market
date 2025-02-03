@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Интернет-магазин одежды Павлюкевича</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👚</text></svg>">
 </head>
 <body>
   <header>
     <nav>
-      <h1>Mастерская Павлюкевича</h1>
+      <h1>Мастерская Павлюкевича</h1>
       <div class="nav-buttons">
         <button id="theme-toggle">🌙</button>
         <div id="cart-icon" class="cart-icon">
@@ -57,7 +58,7 @@
         <p class="out-of-stock-text">Товар закончился</p>
       </div>
       <div class="card" data-id="4">
-        <img src="./img/4-4.png" alt="Товар 1">
+        <img src="./img/4-4.png" alt="Товар 4">
         <h3>Товар 4</h3>
         <p>Цена: $20</p>
         <select class="size-select">
@@ -70,7 +71,7 @@
         <button class="open-modal">Подробнее</button>
       </div>
       <div class="card" data-id="5">
-        <img src="./img/5-5.png" alt="Товар 1">
+        <img src="./img/5-5.png" alt="Товар 5">
         <h3>Товар 5</h3>
         <p>Цена: $20</p>
         <select class="size-select">
@@ -107,16 +108,19 @@
     </div>
   </div>
 
-  <!-- Контактная форма -->
-  <div id="contact-form" class="contact-form">
-    <h2>Оформление заказа</h2>
-    <form id="order-form">
-      <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
-      <label for="message">Сообщение:</label>
-      <textarea id="message" name="message" readonly placeholder="Ваш заказ"></textarea>
-      <button type="submit">Отправить в WhatsApp</button>
-    </form>
+  <!-- Модальное окно контактной формы -->
+  <div id="contact-form-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Оформление заказа</h2>
+      <form id="order-form">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+        <label for="message">Заказ:</label>
+        <textarea id="message" name="message" readonly placeholder="Ваш заказ"></textarea>
+        <button type="submit">Отправить в WhatsApp</button>
+      </form>
+    </div>
   </div>
 
   <script src="script.js"></script>
