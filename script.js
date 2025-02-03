@@ -1,10 +1,8 @@
 // Описания товаров
 const productDescriptions = {
-  1: "Летнее платье: Легкое платье из хлопка с цветочным принтом. Короткий рукав, А-силуэт, длина до колена. Идеально для жаркого дня и прогулок по городу.",
-  2: "Уютный свитер: Мягкий свитер крупной вязки с высоким воротом. Теплый и объемный, идеально подходит для холодных вечеров. Приятный бежевый оттенок.",
-  3: "К сожалению, товар закончился.",
-  4: "Классический костюм: Строгий костюм-двойка темно-синего цвета. Приталенный пиджак и прямые брюки. Подходит для деловых встреч и торжественных мероприятий.",
-  5: "Спортивный комплект: Удобный спортивный костюм из эластичной ткани. Толстовка на молнии и облегающие леггинсы. Отличный выбор для тренировок и активного отдыха.",
+  1:  "Это описание товара 1. Он очень качественный и стильный.",
+  2: "Это описание товара 2. Идеально подходит для повседневной носки.",
+  3: "Это описание товара 3. К сожалению, товар закончился.",
   // Добавьте описания для остальных товаров
 };
 
@@ -15,6 +13,7 @@ const closeModalButtons = document.querySelectorAll('.close');
 const modalTitle = document.getElementById('modal-title');
 const modalDescription = document.getElementById('modal-description');
 
+// Открытие модального окна при клике на кнопку "Подробнее"
 openModalButtons.forEach(button => {
   button.addEventListener('click', () => {
     const card = button.closest('.card');
@@ -26,20 +25,21 @@ openModalButtons.forEach(button => {
   });
 });
 
+// Закрытие модальных окон
 closeModalButtons.forEach(button => {
   button.addEventListener('click', () => {
     modal.style.display = 'none';
     cartModal.style.display = 'none';
+    contactFormModal.style.display = 'none';
   });
 });
 
-// Закрытие модального окна при клике вне его
+// Закрытие модальных окон при клике вне их
 window.addEventListener('click', (event) => {
-  if (event.target === modal) {
+  if (event.target === modal || event.target === cartModal || event.target === contactFormModal) {
     modal.style.display = 'none';
-  }
-  if (event.target === cartModal) {
     cartModal.style.display = 'none';
+    contactFormModal.style.display = 'none';
   }
 });
 
@@ -49,6 +49,7 @@ const cartItems = document.getElementById('cart-items');
 const cartIcon = document.getElementById('cart-icon');
 const cartModal = document.getElementById('cart-modal');
 const cartCount = document.getElementById('cart-count');
+const contactFormModal = document.getElementById('contact-form-modal');
 
 document.querySelectorAll('.add-to-cart').forEach(button => {
   button.addEventListener('click', () => {
@@ -124,7 +125,6 @@ updateCart();
 
 // Оформление заказа
 document.getElementById('checkout').addEventListener('click', () => {
-  const contactForm = document.getElementById('contact-form');
   const messageField = document.getElementById('message');
 
   let message = 'Заказ:\n';
@@ -133,11 +133,8 @@ document.getElementById('checkout').addEventListener('click', () => {
   });
 
   messageField.value = message;
-  contactForm.style.display = 'block';
   cartModal.style.display = 'none';
-
-  // Прокрутка к контактной форме
-  contactForm.scrollIntoView({ behavior: 'smooth' });
+  contactFormModal.style.display = 'flex';
 });
 
 // Отправка формы в WhatsApp
@@ -159,3 +156,5 @@ themeToggle.addEventListener('click', () => {
   body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
   themeToggle.innerText = body.dataset.theme === 'dark' ? '☀️' : '🌙';
 });
+
+
