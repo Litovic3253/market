@@ -45,16 +45,16 @@ header {
   z-index: 1000;
 }
 
+img{
+  border-radius: 5%;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-img{
-  border-radius: 5%;
 }
 
 .nav-buttons {
@@ -87,6 +87,7 @@ img{
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -115,6 +116,7 @@ img{
 .out-of-stock {
   opacity: 0.6;
   position: relative;
+  cursor: not-allowed;
 }
 
 .out-of-stock::after {
@@ -206,19 +208,17 @@ img{
   margin-left: 10px;
 }
 
-.contact-form {
-  display: none;
+#contact-form-modal .modal-content {
   background: var(--form-bg);
   padding: 30px;
   border-radius: 12px;
   max-width: 500px;
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
   box-shadow: var(--form-shadow);
   border: 1px solid var(--form-border);
 }
 
-.contact-form h2 {
+#contact-form-modal h2 {
   margin-bottom: 20px;
   font-size: 24px;
   text-align: center;
@@ -288,16 +288,16 @@ form button:hover {
 }
 
 @media (max-width: 480px) {
+
   header {
     width: 100%;
     background-color: var(--card-bg);
-    padding: 5px 5px 5px 30px;
+    padding: 5px 0 0 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     z-index: 1000;
   }
-
   .grid-container {
     grid-template-columns: 1fr;
   }
