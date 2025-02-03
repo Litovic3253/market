@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Интернет-магазин одежды</title>
+  <title>Интернет-магазин одежды Павлюкевича</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Добро пожаловать в наш магазин одежды!</h1>
-    <div class="header-buttons">
-      <button id="theme-toggle">🌙</button>
-      <div id="cart-icon" class="cart-icon">
-        <span>🛒</span>
-        <span id="cart-count">0</span>
+    <nav>
+      <h1>Mастерская Павлюкевича</h1>
+      <div class="nav-buttons">
+        <button id="theme-toggle">🌙</button>
+        <div id="cart-icon" class="cart-icon">
+          <span>🛒</span>
+          <span id="cart-count">0</span>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main>
@@ -47,10 +49,17 @@
         <button class="add-to-cart">Добавить в корзину</button>
         <button class="open-modal">Подробнее</button>
       </div>
+      <!-- Карточка "Товар закончился" -->
+      <div class="card out-of-stock" data-id="3">
+        <img src="./img/3-3.png" alt="Товар 3">
+        <h3>Товар 3</h3>
+        <p>Цена: $30</p>
+        <p class="out-of-stock-text">Товар закончился</p>
+      </div>
       <div class="card" data-id="4">
-        <img src="./img/3-3.png" alt="Товар 4">
+        <img src="./img/4-4.png" alt="Товар 1">
         <h3>Товар 4</h3>
-        <p>Цена: $35</p>
+        <p>Цена: $20</p>
         <select class="size-select">
           <option value="">Выберите размер</option>
           <option value="S">S</option>
@@ -61,9 +70,9 @@
         <button class="open-modal">Подробнее</button>
       </div>
       <div class="card" data-id="5">
-        <img src="./img/4-4.png" alt="Товар 5">
+        <img src="./img/5-5.png" alt="Товар 1">
         <h3>Товар 5</h3>
-        <p>Цена: $45</p>
+        <p>Цена: $20</p>
         <select class="size-select">
           <option value="">Выберите размер</option>
           <option value="S">S</option>
@@ -72,26 +81,6 @@
         </select>
         <button class="add-to-cart">Добавить в корзину</button>
         <button class="open-modal">Подробнее</button>
-      </div>
-      <div class="card" data-id="6">
-        <img src="./img/5-5.png" alt="Товар 6">
-        <h3>Товар 6</h3>
-        <p>Цена: $65</p>
-        <select class="size-select">
-          <option value="">Выберите размер</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-        </select>
-        <button class="add-to-cart">Добавить в корзину</button>
-        <button class="open-modal">Подробнее</button>
-      </div>
-      <!-- Карточка "Товар закончился" -->
-      <div class="card out-of-stock" data-id="3">
-        <img src="https://via.placeholder.com/150" alt="Товар 3">
-        <h3>Товар 3</h3>
-        <p>Цена: $30</p>
-        <p class="out-of-stock-text">Товар закончился</p>
       </div>
       <!-- Добавьте остальные карточки по аналогии -->
     </div>
@@ -123,9 +112,9 @@
     <h2>Оформление заказа</h2>
     <form id="order-form">
       <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
       <label for="message">Сообщение:</label>
-      <textarea id="message" name="message" readonly></textarea>
+      <textarea id="message" name="message" readonly placeholder="Ваш заказ"></textarea>
       <button type="submit">Отправить в WhatsApp</button>
     </form>
   </div>
